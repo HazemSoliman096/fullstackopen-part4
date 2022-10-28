@@ -1,0 +1,10 @@
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 121
+ETag: W/"79-9QwOFBro1S6IfDhQL9VD35P2F4Y"
+Date: Fri, 28 Oct 2022 23:26:13 GMT
+Connection: close
+
+{"title":"Blog 1","author":"Samy Samy","url":"https://www.blog1.com","likes":12,"_id":"635c65155700c6e9a3bde2ce","__v":0}
