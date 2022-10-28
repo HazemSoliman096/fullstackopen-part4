@@ -1,0 +1,39 @@
+{
+  "name": "blog_list",
+  "version": "1.0.0",
+  "description": "A Blog list application, that allows users to save information about interesting blogs they have stumbled across on the internet.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HazemSoliman096/fullstackopen-part4.git"
+  },
+  "keywords": [
+    "Express",
+    "testing",
+    "blog"
+  ],
+  "author": "Hazem AbdEl-Aziz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HazemSoliman096/fullstackopen-part4/issues"
+  },
+  "homepage": "https://github.com/HazemSoliman096/fullstackopen-part4#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.20"
+  }
+}
