@@ -2,8 +2,8 @@ const listHelper = require('../utils/list_helper');
 const { blogs } = require('../utils/data');
 
 test('Dummy returns one', () => {
-  const blogs = [];
-  const result = listHelper.dummy(blogs);
+  const emptyBlogs = [];
+  const result = listHelper.dummy(emptyBlogs);
   expect(result).toBe(1);
 });
 
@@ -16,7 +16,7 @@ describe('total likes', () => {
       url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
       likes: 5,
       __v: 0,
-    }
+    },
   ];
 
   test('when list has only one blog, equals the likes of that', () => {
@@ -35,9 +35,8 @@ describe('total likes', () => {
   });
 });
 
-
 describe('favorites', () => {
- test('get favorite blog with most likes', () => {
+  test('get favorite blog with most likes', () => {
     const result = listHelper.favoriteBlog(blogs);
     expect(result).toEqual({
       _id: '5a422b3a1b54a676234d17f9',
@@ -47,5 +46,20 @@ describe('favorites', () => {
       likes: 12,
       __v: 0,
     });
+  });
+});
+
+describe('mostBlogs', () => {
+  test('get the author with most blogs', () => {
+    const result = listHelper.mostBlogs(blogs);
+    expect(result).toBe('Robert C. Martin');
+  });
+});
+
+describe('mostLikes', () => {
+  test('get the author with most likes', () => {
+    const result = listHelper.mostLikes(blogs);
+    console.log(result);
+    expect(result).toBe('Edsger W. Dijkstra');
   });
 });
