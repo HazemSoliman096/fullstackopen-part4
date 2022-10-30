@@ -1,22 +1,27 @@
 const blogsRouter = require('express').Router();
-const Blog = require('../models/Blog');
+const { PrismaClient } = require('@prisma/client');
 
-blogsRouter.get('/', (request, response) => {
-  Blog
-    .find({})
-    .then((blogs) => {
-      response.json(blogs);
-    });
+const prisma = new PrismaClient();
+
+blogsRouter.get('/', async (request, response) => {
+  const Blogs = await prisma.blogs.findMany({});
+  response.json(Blogs);
 });
 
-blogsRouter.post('/', (request, response) => {
-  const blog = new Blog(request.body);
-
-  blog
-    .save()
-    .then((result) => {
-      response.status(201).json(result);
-    });
+blogsRouter.post('/', async (request, response) => {
+  const {
+    author, likes, title, url,
+  } = request.body;
+  const blogs = await prisma.blogs.create({
+    data: {
+      author,
+      likes,
+      title,
+      url,
+      v: 0,
+    },
+  });
+  response.status(201).json(blogs);
 });
 
 module.exports = blogsRouter;
